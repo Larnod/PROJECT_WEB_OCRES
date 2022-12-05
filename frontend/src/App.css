@@ -260,7 +260,7 @@ dt {
 .percentage:after {
   display: block;
   background-color: #344a39;
-  width: 50px;
+  width: 500px;
   margin-bottom: 10px;
   height: 90%;
   position: relative;
@@ -602,3 +602,11 @@ dt {
       width: 100%;
   }
 };
+
+.bar{
+  color: #244e2e;
+  width: 80px;
+  height: 20px;
+  z-index: 289;
+
+}

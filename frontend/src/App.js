@@ -14,7 +14,7 @@ class AirportAPI extends React.Component {
 
 
   componentDidMount() {
-    fetch("https://airlabs.co/api/v9/nearby?lat=48.91804697277685&lng=2.58&distance=15&lang=fr&api_key=05195ff7-398c-47c1-a4ed-0d2e16a2656e")
+    fetch("https://airlabs.co/api/v9/nearby?lat=48.91804697277685&lng=2.58&distance=25&lang=fr&api_key=05195ff7-398c-47c1-a4ed-0d2e16a2656e")
       .then(res => res.json())
       .then(
         (result) => {
@@ -106,11 +106,11 @@ class AirportAPI extends React.Component {
 
           <div id="six" class="widget">
             <dt>DISTANCE DES AÉROPORTS</dt>
-            <dd class="percentage-10"><span class="text">{data.response.airports[1].iata_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-20"><span class="text">{data.response.airports[1].iata_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-30"><span class="text">{data.response.airports[1].iata_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-40"><span class="text">{data.response.airports[1].iata_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-50"><span class="text">{data.response.airports[1].iata_code}</span><div class="bar"></div></dd>
+            <dd class="percentage-10"><span class="text">{data.response.airports[0].icao_code}</span><div class="bar"></div></dd>
+            <dd class="percentage-20"><span class="text">{data.response.airports[1].icao_code}</span><div class="bar"></div></dd>
+            <dd class="percentage-30"><span class="text">{data.response.airports[2].icao_code}</span><div class="bar"></div></dd>
+            <dd class="percentage-40"><span class="text">{data.response.airports[3].icao_code}</span><div class="bar"></div></dd>
+            <dd class="percentage-50"><span class="text">{data.response.airports[4].icao_code}</span><div class="bar"></div></dd>
 
           </div>
 
