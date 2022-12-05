@@ -104,13 +104,6 @@ class AirportAPI extends React.Component {
             </div>
           </div>
 
-          <div id="five" class="widget">
-            <div class="city">
-              <li>Code du pays</li>
-              {data.response.airports[1].country_code}
-            </div>
-          </div>
-
           <div id="six" class="widget">
             <dt>DISTANCE DES AÉROPORTS</dt>
             <dd class="percentage-10"><span class="text">{data.response.airports[1].iata_code}</span><div class="bar"></div></dd>
@@ -120,6 +113,15 @@ class AirportAPI extends React.Component {
             <dd class="percentage-50"><span class="text">{data.response.airports[1].iata_code}</span><div class="bar"></div></dd>
 
           </div>
+
+          <div id="five" class="widget">
+            <div class="city">
+              <li>Code du pays</li>
+              {data.response.airports[1].country_code}
+            </div>
+          </div>
+
+          
 
         </div>
 
