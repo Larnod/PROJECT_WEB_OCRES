@@ -1,10 +1,11 @@
 import React from "react";
 import axios from "axios";
 import './App.css';
+import photo from './La-couverture-de-RadarBox24-341x220.png'
 
 class AirportAPI extends React.Component {
   constructor(props) {
-    super(props);
+    super(props);   //Creéattion de l'objet Airport qui va recevoir l'objet de la requête
     this.state = {
       error: null,
       isLoaded: false,
@@ -14,7 +15,7 @@ class AirportAPI extends React.Component {
 
 
   componentDidMount() {
-    fetch("https://airlabs.co/api/v9/nearby?lat=48.91804697277685&lng=2.58&distance=25&lang=fr&api_key=05195ff7-398c-47c1-a4ed-0d2e16a2656e")
+    fetch("https://airlabs.co/api/v9/nearby?lat=48.91804697277685&lng=2.58&distance=25&lang=fr&api_key=05195ff7-398c-47c1-a4ed-0d2e16a2656e") // requête a l'API
       .then(res => res.json())
       .then(
         (result) => {
@@ -46,8 +47,8 @@ class AirportAPI extends React.Component {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div class="progress">
-      <div class="color"></div>
-    </div>
+        <div class="color"></div>
+      </div>
     } else {
       return (
 
@@ -69,8 +70,10 @@ class AirportAPI extends React.Component {
           <div class="full-page-green"></div>
           <div class="ham-menu">
             <ul class="centre-text bold-text">
-              <li>Accueil</li>
-              <li>Serices</li>
+              <lo for="site-search">Trouver un aéroport</lo>
+            <input type="search" id="site-search" name="q" width="100px"/>
+            <button>Search</button>
+              <lo>Services</lo>
             </ul>
           </div>
 
@@ -104,16 +107,6 @@ class AirportAPI extends React.Component {
             </div>
           </div>
 
-          <div id="six" class="widget">
-            <dt>DISTANCE DES AÉROPORTS</dt>
-            <dd class="percentage-10"><span class="text">{data.response.airports[0].icao_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-20"><span class="text">{data.response.airports[1].icao_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-30"><span class="text">{data.response.airports[2].icao_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-40"><span class="text">{data.response.airports[3].icao_code}</span><div class="bar"></div></dd>
-            <dd class="percentage-50"><span class="text">{data.response.airports[4].icao_code}</span><div class="bar"></div></dd>
-
-          </div>
-
           <div id="five" class="widget">
             <div class="city">
               <li>Code du pays</li>
@@ -121,7 +114,15 @@ class AirportAPI extends React.Component {
             </div>
           </div>
 
+          <div id="six" class="widget">
+            <dt>Traffic Aérien</dt>
+            <img src={photo} alt="Picture" height="300" width="460" />
+
+          </div>
+
           
+
+
 
         </div>
 
