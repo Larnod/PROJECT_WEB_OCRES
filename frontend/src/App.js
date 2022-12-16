@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import './App.css';
-import photo from './La-couverture-de-RadarBox24-341x220.png'
+
 
 class AirportAPI extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class AirportAPI extends React.Component {
       .then(
         (result) => {
 
-          this.setState({   //sauvegarde dans le state de l'objet API
+          this.setState({
             isLoaded: true,
             items: result
           });
@@ -46,11 +46,11 @@ class AirportAPI extends React.Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div class="progress">     
+      return <div class="progress">
         <div class="color"></div>
-      </div> //Barre de progression de chargement
+      </div>
     } else {
-      return (  
+      return (
 
 
         <div class="body">
@@ -65,17 +65,17 @@ class AirportAPI extends React.Component {
               <span class="menu-line"></span>
               <span class="menu-line"></span>
             </div>
-          </label>
 
+          </label>
           <div class="full-page-green"></div>
           <div class="ham-menu">
             <ul class="centre-text bold-text">
               <lo for="site-search">Trouver un aéroport</lo>
-            <input type="search" id="site-search" name="q" width="100px"/>    
+            <input type="search" id="site-search" name="q" width="100px"/>
             <button>Search</button>
               <lo>Services</lo>
             </ul>
-          </div> 
+          </div>
 
           <div class="titre">Dashboard Aéroports</div>
 
@@ -110,16 +110,17 @@ class AirportAPI extends React.Component {
           <div id="five" class="widget">
             <div class="city">
               <li>Code du pays</li>
-              {data.response.airports[1].country_code}  
+              {data.response.airports[1].country_code}
             </div>
           </div>
 
-          <div id="six" class="widget">
-            <dt>TRAFFIC AÉRIEN</dt>
-            <img src={photo} alt="Picture" height="300" width="460" />
-
           </div>
-        </div>
+
+          
+
+
+
+       
 
       );
     }
