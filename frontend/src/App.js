@@ -15,12 +15,12 @@ class AirportAPI extends React.Component {
 
 
   componentDidMount() {
-    fetch("https://airlabs.co/api/v9/nearby?lat=48.91804697277685&lng=2.58&distance=25&lang=fr&api_key=05195ff7-398c-47c1-a4ed-0d2e16a2656e") // requête a l'API
+    fetch("https://airlabs.co/api/v9/nearby?lat=48.91804697277685&lng=2.58&distance=25&lang=fr&api_key=ad027967-bcf0-47e9-8df2-525564f561c9") // requête a l'API
       .then(res => res.json())
       .then(
         (result) => {
 
-          this.setState({
+          this.setState({   //sauvegarde dans le state de l'objet API
             isLoaded: true,
             items: result
           });
@@ -46,11 +46,11 @@ class AirportAPI extends React.Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div class="progress">
+      return <div class="progress">     
         <div class="color"></div>
-      </div>
+      </div> //Barre de progression de chargement
     } else {
-      return (
+      return (  
 
 
         <div class="body">
@@ -65,17 +65,17 @@ class AirportAPI extends React.Component {
               <span class="menu-line"></span>
               <span class="menu-line"></span>
             </div>
-
           </label>
+
           <div class="full-page-green"></div>
           <div class="ham-menu">
             <ul class="centre-text bold-text">
               <lo for="site-search">Trouver un aéroport</lo>
-            <input type="search" id="site-search" name="q" width="100px"/>
+            <input type="search" id="site-search" name="q" width="100px"/>    
             <button>Search</button>
               <lo>Services</lo>
             </ul>
-          </div>
+          </div> 
 
           <div class="titre">Dashboard Aéroports</div>
 
@@ -110,20 +110,15 @@ class AirportAPI extends React.Component {
           <div id="five" class="widget">
             <div class="city">
               <li>Code du pays</li>
-              {data.response.airports[1].country_code}
+              {data.response.airports[1].country_code}  
             </div>
           </div>
 
           <div id="six" class="widget">
-            <dt>Traffic Aérien</dt>
+            <dt>TRAFFIC AÉRIEN</dt>
             <img src={photo} alt="Picture" height="300" width="460" />
 
           </div>
-
-          
-
-
-
         </div>
 
       );
